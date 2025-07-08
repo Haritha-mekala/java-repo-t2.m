@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    tools {
+        maven 'Mvn'  // Use the name exactly as configured in Jenkins
+    }
+    
     environment {
         IMAGE_NAME = "srinivasulu2004/repo-1:${BUILD_NUMBER}"
     }
