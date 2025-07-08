@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        maven 'Mvn'  // Use the name exactly as configured in Jenkins
+        maven 'mvn'  // Use the name exactly as configured in Jenkins
     }
     
     environment {
