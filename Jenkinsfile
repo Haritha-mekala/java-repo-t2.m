@@ -1,12 +1,12 @@
 pipeline {
     agent any
     environment {
-        IMAGE_NAME = "your-dockerhub-username/java-hello-app:${BUILD_NUMBER}"
+        IMAGE_NAME = "srinivasulu2004/repo-1:${BUILD_NUMBER}"
     }
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-username/java-hello-app.git'
+                git 'https://github.com/srinivasulu2004/java-repo-t2.m.git'
             }
         }
         stage('Build') {
@@ -17,7 +17,7 @@ pipeline {
         stage('Docker Build & Push') {
             steps {
                 script {
-                    docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-credentials-id') {
+                    docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
                         def image = docker.build("${IMAGE_NAME}")
                         image.push()
                     }
