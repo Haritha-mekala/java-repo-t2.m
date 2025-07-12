@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+     agent { node { label 'node1' } }
     tools {
         maven 'mvn'  // Use the name exactly as configured in Jenkins
     }
