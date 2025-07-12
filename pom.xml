@@ -24,23 +24,30 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <!-- Compiler plugin for Java 21 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version>
-                <configuration>
-                    <release>${maven.compiler.release}</release>
-                </configuration>
-            </plugin>
+   <build>
+    <plugins>
+        <!-- Compiler plugin for Java 21 -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.10.1</version>
+            <configuration>
+                <release>${maven.compiler.release}</release>
+            </configuration>
+        </plugin>
 
-            <!-- Spring Boot plugin -->
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-</project>
+        <!-- ✅ Spring Boot plugin with executable jar -->
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <version>${spring.boot.version}</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>repackage</goal> <!-- 👈 Required to make a runnable jar -->
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
