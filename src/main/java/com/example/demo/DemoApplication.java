@@ -15,7 +15,7 @@ public class DemoApplication {
     class HelloController {
         @GetMapping("/")
         public String hello() {
-            return "Hello World";
+            return "hi guys  ..... i successfully deployed java application on my application server";
         }
     }
 }
