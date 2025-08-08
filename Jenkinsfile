@@ -6,7 +6,7 @@ pipeline {
     }
     
     environment {
-        IMAGE_NAME = "Haritha/repo-1:${BUILD_NUMBER}"
+        IMAGE_NAME = "devops230/java-docker:${BUILD_NUMBER}"
     }
     stages {
         stage('Checkout') {
