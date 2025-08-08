@@ -1,17 +1,17 @@
 pipeline {
      agent { node { label 'agent1' } }
     tools {
-        maven 'maven' 
-        jdk 'jdk-21'
+        maven 'mvn' 
+        jdk 'jdk'
     }
     
     environment {
-        IMAGE_NAME = "srinivasulu2004/repo-1:${BUILD_NUMBER}"
+        IMAGE_NAME = "Haritha/repo-1:${BUILD_NUMBER}"
     }
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/srinivasulu2004/java-repo-t2.m.git'
+                git 'https://github.com/Haritha-mekala/java-repo-t2.m.git'
             }
         }
         stage('Build') {
